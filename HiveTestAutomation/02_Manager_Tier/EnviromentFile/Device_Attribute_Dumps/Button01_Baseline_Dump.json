@@ -1,0 +1,268 @@
+{
+    "DeviceModelID": "Button01",
+    "DeviceVersion": "02021470",
+    "ListOfEndPoints": {
+        "01": {
+            "EndPoint": "01",
+            "ListOfClusters": {
+                "0000_Basic Cluster": {
+                    "ClusterID": "0000",
+                    "ClusterName": "Basic Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_zclVersion": {
+                            "AttributeID": "0000",
+                            "AttributeName": "zclVersion",
+                            "AttributeType": "20",
+                            "DefaultValue": "01",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0001_applicationVersion": {
+                            "AttributeID": "0001",
+                            "AttributeName": "applicationVersion",
+                            "AttributeType": "20",
+                            "DefaultValue": "02",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0002_stackVersion": {
+                            "AttributeID": "0002",
+                            "AttributeName": "stackVersion",
+                            "AttributeType": "20",
+                            "DefaultValue": "BE",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0003_hardwareVersion": {
+                            "AttributeID": "0003",
+                            "AttributeName": "hardwareVersion",
+                            "AttributeType": "20",
+                            "DefaultValue": "01",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0004_manufacturerName": {
+                            "AttributeID": "0004",
+                            "AttributeName": "manufacturerName",
+                            "AttributeType": "42",
+                            "DefaultValue": "HiveHome.com",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0005_modelIdentifier": {
+                            "AttributeID": "0005",
+                            "AttributeName": "modelIdentifier",
+                            "AttributeType": "42",
+                            "DefaultValue": "Button01",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0006_dateCode": {
+                            "AttributeID": "0006",
+                            "AttributeName": "dateCode",
+                            "AttributeType": "42",
+                            "DefaultValue": "20170607",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0007_powerSource": {
+                            "AttributeID": "0007",
+                            "AttributeName": "powerSource",
+                            "AttributeType": "30",
+                            "DefaultValue": "03",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0008_applicationProfileVersion": {
+                            "AttributeID": "0008",
+                            "AttributeName": "applicationProfileVersion",
+                            "AttributeType": "23",
+                            "DefaultValue": "00001081",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0010_locationDescription": {
+                            "AttributeID": "0010",
+                            "AttributeName": "locationDescription",
+                            "AttributeType": "42",
+                            "DefaultValue": "",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0012_deviceEnabled": {
+                            "AttributeID": "0012",
+                            "AttributeName": "deviceEnabled",
+                            "AttributeType": "10",
+                            "DefaultValue": "01",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                },
+                "0001_Power Configuration Cluster": {
+                    "ClusterID": "0001",
+                    "ClusterName": "Power Configuration Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0020_batteryVoltage": {
+                            "AttributeID": "0020",
+                            "AttributeName": "batteryVoltage",
+                            "AttributeType": "20",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "0001,0E10,01"
+                        },
+                        "0021_batteryPercentageRemaining": {
+                            "AttributeID": "0021",
+                            "AttributeName": "batteryPercentageRemaining",
+                            "AttributeType": "20",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "0001,0E10,01"
+                        },
+                        "0030_batteryManufacturer": {
+                            "AttributeID": "0030",
+                            "AttributeName": "batteryManufacturer",
+                            "AttributeType": "42",
+                            "DefaultValue": "2032",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0031_batterySize": {
+                            "AttributeID": "0031",
+                            "AttributeName": "batterySize",
+                            "AttributeType": "30",
+                            "DefaultValue": "02",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                },
+                "0003_Identify Cluster": {
+                    "ClusterID": "0003",
+                    "ClusterName": "Identify Cluster",
+                    "ClusterType": "client",
+                    "ListOfAttributes": {}
+                },
+                "0006_On/Off Cluster": {
+                    "ClusterID": "0006",
+                    "ClusterName": "On/Off Cluster",
+                    "ClusterType": "client",
+                    "ListOfAttributes": {}
+                },
+                "0019_OTA Cluster": {
+                    "ClusterID": "0019",
+                    "ClusterName": "OTA Cluster",
+                    "ClusterType": "client",
+                    "ListOfAttributes": {
+                        "0000_upgradeServerId": {
+                            "AttributeID": "0000",
+                            "AttributeName": "upgradeServerId",
+                            "AttributeType": "F0",
+                            "DefaultValue": "0000000000000000",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0001_file Offset": {
+                            "AttributeID": "0001",
+                            "AttributeName": "file Offset",
+                            "AttributeType": "23",
+                            "DefaultValue": "00000000",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0002_current File Version": {
+                            "AttributeID": "0002",
+                            "AttributeName": "current File Version",
+                            "AttributeType": "23",
+                            "DefaultValue": "02021470",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0003_current ZigBee Stack Version": {
+                            "AttributeID": "0003",
+                            "AttributeName": "current ZigBee Stack Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "05BE",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0004_downloaded File Version": {
+                            "AttributeID": "0004",
+                            "AttributeName": "downloaded File Version",
+                            "AttributeType": "23",
+                            "DefaultValue": "00000000",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0005_downloaded ZigBee Stack Version": {
+                            "AttributeID": "0005",
+                            "AttributeName": "downloaded ZigBee Stack Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "0000",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0006_image Upgrade Status": {
+                            "AttributeID": "0006",
+                            "AttributeName": "image Upgrade Status",
+                            "AttributeType": "30",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0007_manufacturerId": {
+                            "AttributeID": "0007",
+                            "AttributeName": "manufacturerId",
+                            "AttributeType": "21",
+                            "DefaultValue": "1039",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0008_imageTypeId": {
+                            "AttributeID": "0008",
+                            "AttributeName": "imageTypeId",
+                            "AttributeType": "21",
+                            "DefaultValue": "FFFF",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                },
+                "0020_Poll Control Cluster": {
+                    "ClusterID": "0020",
+                    "ClusterName": "Poll Control Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_checkInInterval": {
+                            "AttributeID": "0000",
+                            "AttributeName": "checkInInterval",
+                            "AttributeType": "23",
+                            "DefaultValue": "000004B0",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0001_longPollInterval": {
+                            "AttributeID": "0001",
+                            "AttributeName": "longPollInterval",
+                            "AttributeType": "23",
+                            "DefaultValue": "000004B0",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0002_shortPollInterval": {
+                            "AttributeID": "0002",
+                            "AttributeName": "shortPollInterval",
+                            "AttributeType": "21",
+                            "DefaultValue": "0004",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0003_fastPollTimeout": {
+                            "AttributeID": "0003",
+                            "AttributeName": "fastPollTimeout",
+                            "AttributeType": "21",
+                            "DefaultValue": "0028",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0004_checkInIntervalMin": {
+                            "AttributeID": "0004",
+                            "AttributeName": "checkInIntervalMin",
+                            "AttributeType": "23",
+                            "DefaultValue": "0000012C",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0005_LongPollIntervalMin": {
+                            "AttributeID": "0005",
+                            "AttributeName": "LongPollIntervalMin",
+                            "AttributeType": "23",
+                            "DefaultValue": "00000014",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0006_fastPollTimeoutMax": {
+                            "AttributeID": "0006",
+                            "AttributeName": "fastPollTimeoutMax",
+                            "AttributeType": "21",
+                            "DefaultValue": "04B0",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

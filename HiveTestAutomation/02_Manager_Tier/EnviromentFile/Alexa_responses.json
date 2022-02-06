@@ -1,0 +1,38 @@
+{
+  "expectedResponses":{
+    "Response 1" : "Sure",
+    "Response 2" : "Ok",
+    "Response 3" : "Yes of course",
+    "Response 4" : "Sure thing",
+    "Response 5" : "I would love to",
+    "Response 6" : "Yeah Ok",
+    "Response 7" : "Your wish is my command",
+    "Response 8" : "Done",
+    "Response 9": "Sure Ok",
+    "Response 10": "Sorry, I didn't find PlugName",
+    "Response 11" : "That command doesn't work on device",
+    "Response 12" : "Sorry, I didn't find plug 1",
+    "Response 13" : "Sorry, I didn't find all plug",
+    "Response 14" : "Sorry, I didn't find Light White 1",
+    "Response 15" : "Sorry, I didn't find all lights",
+    "Response 16" : "Sorry, I didn't find Light White 1",
+    "Response 17" : "That command doesn't work on device",
+    "Response 18" : "sorry I didn't find",
+    "Response 19" : "The heat's set to 20",
+    "Response 20" : "The heat's set to 15",
+    "Response 21" : "It's off",
+    "Response 22" : "Downstairs is set to 7"
+  },
+  "expectedErrorResponses":{
+    "Response 1" : "That command doesn't work on device downstairs",
+    "Response 2" : "Sorry, I didn't find plug 1",
+    "Response 3" : "Sorry, I didn't find all plug",
+    "Response 4" : "Sorry, I didn't find Light White 1",
+    "Response 5" : "Sorry, I didn't find all lights",
+    "Response 6" : "Sorry, I didn't find Light White 1",
+    "Response 7" : "That command doesn't work on device",
+    "Response 8" : "Sorry I didn't find",
+    "Response 9" : "I can only set the temperature between 5 and 32 degrees",
+    "Response 10":"I found several devices matching that name. Which one did you want?"
+  }
+}

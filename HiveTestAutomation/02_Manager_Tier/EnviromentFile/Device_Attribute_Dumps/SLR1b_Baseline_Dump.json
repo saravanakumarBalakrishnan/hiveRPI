@@ -1,0 +1,456 @@
+{
+    "DeviceModelID": "SLR1b",
+    "DeviceVersion": "00105700",
+    "ListOfEndPoints": {
+        "05": {
+            "EndPoint": "05",
+            "ListOfClusters": {
+                "0000_Basic Cluster": {
+                    "ClusterID": "0000",
+                    "ClusterName": "Basic Cluster",
+                    "ClusterType": "client",
+                    "ListOfAttributes": {}
+                },
+                "0003_Identify Cluster": {
+                    "ClusterID": "0003",
+                    "ClusterName": "Identify Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_identifyTime": {
+                            "AttributeID": "0000",
+                            "AttributeName": "identifyTime",
+                            "AttributeType": "21",
+                            "DefaultValue": "0000",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0003,8B,00,0000"
+                        },
+                        "FFFD_Ember: Cluster Version": {
+                            "AttributeID": "FFFD",
+                            "AttributeName": "Ember: Cluster Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "0001",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0003,8B,00,FFFD"
+                        }
+                    }
+                },
+                "0009_Alarms Cluster": {
+                    "ClusterID": "0009",
+                    "ClusterName": "Alarms Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_alarmCount": {
+                            "AttributeID": "0000",
+                            "AttributeName": "alarmCount",
+                            "AttributeType": "21",
+                            "DefaultValue": "0000",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0009,8B,00,0000"
+                        },
+                        "FFFD_Ember: Cluster Version": {
+                            "AttributeID": "FFFD",
+                            "AttributeName": "Ember: Cluster Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "0001",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0009,8B,00,FFFD"
+                        }
+                    }
+                },
+                "000A_Time Cluster": {
+                    "ClusterID": "000A",
+                    "ClusterName": "Time Cluster",
+                    "ClusterType": "client",
+                    "ListOfAttributes": {}
+                },
+                "0019_OTA Cluster": {
+                    "ClusterID": "0019",
+                    "ClusterName": "OTA Cluster",
+                    "ClusterType": "client",
+                    "ListOfAttributes": {
+                        "0000_upgradeServerId": {
+                            "AttributeID": "0000",
+                            "AttributeName": "upgradeServerId",
+                            "AttributeType": "F0",
+                            "DefaultValue": "0021ED00000905FB",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0019,8B,00,0000"
+                        },
+                        "0001_file Offset": {
+                            "AttributeID": "0001",
+                            "AttributeName": "file Offset",
+                            "AttributeType": "23",
+                            "DefaultValue": "0003AB7E",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0019,8B,00,0001"
+                        },
+                        "0002_current File Version": {
+                            "AttributeID": "0002",
+                            "AttributeName": "current File Version",
+                            "AttributeType": "23",
+                            "DefaultValue": "00105700",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0019,8B,00,0002"
+                        },
+                        "0003_current ZigBee Stack Version": {
+                            "AttributeID": "0003",
+                            "AttributeName": "current ZigBee Stack Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "0002",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0019,8B,00,0003"
+                        },
+                        "0004_downloaded File Version": {
+                            "AttributeID": "0004",
+                            "AttributeName": "downloaded File Version",
+                            "AttributeType": "23",
+                            "DefaultValue": "00105700",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0019,8B,00,0004"
+                        },
+                        "0005_downloaded ZigBee Stack Version": {
+                            "AttributeID": "0005",
+                            "AttributeName": "downloaded ZigBee Stack Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "FFFF",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0019,8B,00,0005"
+                        },
+                        "0006_image Upgrade Status": {
+                            "AttributeID": "0006",
+                            "AttributeName": "image Upgrade Status",
+                            "AttributeType": "30",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0019,8B,00,0006"
+                        },
+                        "0007_manufacturerId": {
+                            "AttributeID": "0007",
+                            "AttributeName": "manufacturerId",
+                            "AttributeType": "21",
+                            "DefaultValue": "1039",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0019,8B,00,0007"
+                        },
+                        "0008_imageTypeId": {
+                            "AttributeID": "0008",
+                            "AttributeName": "imageTypeId",
+                            "AttributeType": "21",
+                            "DefaultValue": "0205",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0019,8B,00,0008"
+                        }
+                    }
+                },
+                "0201_Thermostat Cluster": {
+                    "ClusterID": "0201",
+                    "ClusterName": "Thermostat Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_localTemperature": {
+                            "AttributeID": "0000",
+                            "AttributeName": "localTemperature",
+                            "AttributeType": "29",
+                            "DefaultValue": "0A00",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0201,8B,00,0000"
+                        },
+                        "0011_occupiedCoolingSetpoint": {
+                            "AttributeID": "0011",
+                            "AttributeName": "occupiedCoolingSetpoint",
+                            "AttributeType": "29",
+                            "DefaultValue": "0834",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0201,8B,00,0011"
+                        },
+                        "0012_occupiedHeatingSetpoint": {
+                            "AttributeID": "0012",
+                            "AttributeName": "occupiedHeatingSetpoint",
+                            "AttributeType": "29",
+                            "DefaultValue": "028A",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0201,8B,00,0012"
+                        },
+                        "0015_minHeatSetpointLimit": {
+                            "AttributeID": "0015",
+                            "AttributeName": "minHeatSetpointLimit",
+                            "AttributeType": "29",
+                            "DefaultValue": "01F4",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0201,8B,00,0015"
+                        },
+                        "0016_maxHeatSetpointLimit": {
+                            "AttributeID": "0016",
+                            "AttributeName": "maxHeatSetpointLimit",
+                            "AttributeType": "29",
+                            "DefaultValue": "0C80",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0201,8B,00,0016"
+                        },
+                        "001B_controlSequenceOfOperation": {
+                            "AttributeID": "001B",
+                            "AttributeName": "controlSequenceOfOperation",
+                            "AttributeType": "30",
+                            "DefaultValue": "02",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0201,8B,00,001B"
+                        },
+                        "001C_systemMode": {
+                            "AttributeID": "001C",
+                            "AttributeName": "systemMode",
+                            "AttributeType": "30",
+                            "DefaultValue": "04",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0201,8B,00,001C"
+                        },
+                        "001D_alarmMask": {
+                            "AttributeID": "001D",
+                            "AttributeName": "alarmMask",
+                            "AttributeType": "18",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0201,8B,00,001D"
+                        },
+                        "0020_startOfWeek": {
+                            "AttributeID": "0020",
+                            "AttributeName": "startOfWeek",
+                            "AttributeType": "30",
+                            "DefaultValue": "01",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0201,8B,00,0020"
+                        },
+                        "0021_numberOfWeeklyTransitions": {
+                            "AttributeID": "0021",
+                            "AttributeName": "numberOfWeeklyTransitions",
+                            "AttributeType": "20",
+                            "DefaultValue": "2A",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0201,8B,00,0021"
+                        },
+                        "0022_numberOfDailyTransitions": {
+                            "AttributeID": "0022",
+                            "AttributeName": "numberOfDailyTransitions",
+                            "AttributeType": "20",
+                            "DefaultValue": "06",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0201,8B,00,0022"
+                        },
+                        "0023_temperatureSetpointHold": {
+                            "AttributeID": "0023",
+                            "AttributeName": "temperatureSetpointHold",
+                            "AttributeType": "30",
+                            "DefaultValue": "01",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0201,8B,00,0023"
+                        },
+                        "0024_temperatureSetpointHoldDuration": {
+                            "AttributeID": "0024",
+                            "AttributeName": "temperatureSetpointHoldDuration",
+                            "AttributeType": "21",
+                            "DefaultValue": "FFFF",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0201,8B,00,0024"
+                        },
+                        "0029_thermostatRunningState": {
+                            "AttributeID": "0029",
+                            "AttributeName": "thermostatRunningState",
+                            "AttributeType": "19",
+                            "DefaultValue": "0000",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0201,8B,00,0029"
+                        },
+                        "FFFD_Ember: Cluster Version": {
+                            "AttributeID": "FFFD",
+                            "AttributeName": "Ember: Cluster Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "0001",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,05,0201,8B,00,FFFD"
+                        }
+                    }
+                },
+                "0402_Temperature Measurement Cluster": {
+                    "ClusterID": "0402",
+                    "ClusterName": "Temperature Measurement Cluster",
+                    "ClusterType": "client",
+                    "ListOfAttributes": {}
+                },
+                "FD00_BG Cluster": {
+                    "ClusterID": "FD00",
+                    "ClusterName": "BG Cluster",
+                    "ClusterType": "client",
+                    "ListOfAttributes": {}
+                }
+            }
+        },
+        "06": {
+            "EndPoint": "06",
+            "ListOfClusters": {
+                "0201_Thermostat Cluster": {
+                    "ClusterID": "0201",
+                    "ClusterName": "Thermostat Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_localTemperature": {
+                            "AttributeID": "0000",
+                            "AttributeName": "localTemperature",
+                            "AttributeType": "29",
+                            "DefaultValue": "0834",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,06,0201,8B,00,0000"
+                        },
+                        "0011_occupiedCoolingSetpoint": {
+                            "AttributeID": "0011",
+                            "AttributeName": "occupiedCoolingSetpoint",
+                            "AttributeType": "29",
+                            "DefaultValue": "0834",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,06,0201,8B,00,0011"
+                        },
+                        "0012_occupiedHeatingSetpoint": {
+                            "AttributeID": "0012",
+                            "AttributeName": "occupiedHeatingSetpoint",
+                            "AttributeType": "29",
+                            "DefaultValue": "0C80",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,06,0201,8B,00,0012"
+                        },
+                        "0015_minHeatSetpointLimit": {
+                            "AttributeID": "0015",
+                            "AttributeName": "minHeatSetpointLimit",
+                            "AttributeType": "29",
+                            "DefaultValue": "05DC",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,06,0201,8B,00,0015"
+                        },
+                        "0016_maxHeatSetpointLimit": {
+                            "AttributeID": "0016",
+                            "AttributeName": "maxHeatSetpointLimit",
+                            "AttributeType": "29",
+                            "DefaultValue": "0BB8",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,06,0201,8B,00,0016"
+                        },
+                        "001B_controlSequenceOfOperation": {
+                            "AttributeID": "001B",
+                            "AttributeName": "controlSequenceOfOperation",
+                            "AttributeType": "30",
+                            "DefaultValue": "02",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,06,0201,8B,00,001B"
+                        },
+                        "001C_systemMode": {
+                            "AttributeID": "001C",
+                            "AttributeName": "systemMode",
+                            "AttributeType": "30",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,06,0201,8B,00,001C"
+                        },
+                        "001D_alarmMask": {
+                            "AttributeID": "001D",
+                            "AttributeName": "alarmMask",
+                            "AttributeType": "18",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,06,0201,8B,00,001D"
+                        },
+                        "0020_startOfWeek": {
+                            "AttributeID": "0020",
+                            "AttributeName": "startOfWeek",
+                            "AttributeType": "30",
+                            "DefaultValue": "01",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,06,0201,8B,00,0020"
+                        },
+                        "0021_numberOfWeeklyTransitions": {
+                            "AttributeID": "0021",
+                            "AttributeName": "numberOfWeeklyTransitions",
+                            "AttributeType": "20",
+                            "DefaultValue": "2A",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,06,0201,8B,00,0021"
+                        },
+                        "0022_numberOfDailyTransitions": {
+                            "AttributeID": "0022",
+                            "AttributeName": "numberOfDailyTransitions",
+                            "AttributeType": "20",
+                            "DefaultValue": "06",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,06,0201,8B,00,0022"
+                        },
+                        "0023_temperatureSetpointHold": {
+                            "AttributeID": "0023",
+                            "AttributeName": "temperatureSetpointHold",
+                            "AttributeType": "30",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,06,0201,8B,00,0023"
+                        },
+                        "0024_temperatureSetpointHoldDuration": {
+                            "AttributeID": "0024",
+                            "AttributeName": "temperatureSetpointHoldDuration",
+                            "AttributeType": "21",
+                            "DefaultValue": "0000",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,06,0201,8B,00,0024"
+                        },
+                        "0029_thermostatRunningState": {
+                            "AttributeID": "0029",
+                            "AttributeName": "thermostatRunningState",
+                            "AttributeType": "19",
+                            "DefaultValue": "0000",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,06,0201,8B,00,0029"
+                        },
+                        "FFFD_Ember: Cluster Version": {
+                            "AttributeID": "FFFD",
+                            "AttributeName": "Ember: Cluster Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "0001",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,06,0201,8B,00,FFFD"
+                        }
+                    }
+                }
+            }
+        },
+        "07": {
+            "EndPoint": "07",
+            "ListOfClusters": {
+                "0402_Temperature Measurement Cluster": {
+                    "ClusterID": "0402",
+                    "ClusterName": "Temperature Measurement Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_measuredValue": {
+                            "AttributeID": "0000",
+                            "AttributeName": "measuredValue",
+                            "AttributeType": "29",
+                            "DefaultValue": "0000",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,07,0402,8B,00,0000"
+                        },
+                        "0001_minMeasuredValue": {
+                            "AttributeID": "0001",
+                            "AttributeName": "minMeasuredValue",
+                            "AttributeType": "29",
+                            "DefaultValue": "F060",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,07,0402,8B,00,0001"
+                        },
+                        "0002_maxMeasuredValue": {
+                            "AttributeID": "0002",
+                            "AttributeName": "maxMeasuredValue",
+                            "AttributeType": "29",
+                            "DefaultValue": "30D4",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,07,0402,8B,00,0002"
+                        },
+                        "FFFD_Ember: Cluster Version": {
+                            "AttributeID": "FFFD",
+                            "AttributeName": "Ember: Cluster Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "0001",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,07,0402,8B,00,FFFD"
+                        }
+                    }
+                }
+            }
+        },
+        "08": {
+            "EndPoint": "08",
+            "ListOfClusters": {
+                "0402_Temperature Measurement Cluster": {
+                    "ClusterID": "0402",
+                    "ClusterName": "Temperature Measurement Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_measuredValue": {
+                            "AttributeID": "0000",
+                            "AttributeName": "measuredValue",
+                            "AttributeType": "29",
+                            "DefaultValue": "0000",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,08,0402,8B,00,0000"
+                        },
+                        "0001_minMeasuredValue": {
+                            "AttributeID": "0001",
+                            "AttributeName": "minMeasuredValue",
+                            "AttributeType": "29",
+                            "DefaultValue": "F060",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,08,0402,8B,00,0001"
+                        },
+                        "0002_maxMeasuredValue": {
+                            "AttributeID": "0002",
+                            "AttributeName": "maxMeasuredValue",
+                            "AttributeType": "29",
+                            "DefaultValue": "30D4",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,08,0402,8B,00,0002"
+                        },
+                        "FFFD_Ember: Cluster Version": {
+                            "AttributeID": "FFFD",
+                            "AttributeName": "Ember: Cluster Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "0001",
+                            "ReportableConfigState": "READRPTCFGRSP:E83A,08,0402,8B,00,FFFD"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

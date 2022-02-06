@@ -1,0 +1,480 @@
+{
+    "DeviceModelID": "MOT003",
+    "DeviceVersion": "03012603",
+    "ListOfEndPoints": {
+        "06": {
+            "EndPoint": "06",
+            "ListOfClusters": {
+                "0000_Basic Cluster": {
+                    "ClusterID": "0000",
+                    "ClusterName": "Basic Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_zclVersion": {
+                            "AttributeID": "0000",
+                            "AttributeName": "zclVersion",
+                            "AttributeType": "20",
+                            "DefaultValue": "01",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0001_applicationVersion": {
+                            "AttributeID": "0001",
+                            "AttributeName": "applicationVersion",
+                            "AttributeType": "20",
+                            "DefaultValue": "03",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0002_stackVersion": {
+                            "AttributeID": "0002",
+                            "AttributeName": "stackVersion",
+                            "AttributeType": "20",
+                            "DefaultValue": "26",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0003_hardwareVersion": {
+                            "AttributeID": "0003",
+                            "AttributeName": "hardwareVersion",
+                            "AttributeType": "20",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0004_manufacturerName": {
+                            "AttributeID": "0004",
+                            "AttributeName": "manufacturerName",
+                            "AttributeType": "42",
+                            "DefaultValue": "HiveHome.com",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0005_modelIdentifier": {
+                            "AttributeID": "0005",
+                            "AttributeName": "modelIdentifier",
+                            "AttributeType": "42",
+                            "DefaultValue": "MOT003",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0006_dateCode": {
+                            "AttributeID": "0006",
+                            "AttributeName": "dateCode",
+                            "AttributeType": "42",
+                            "DefaultValue": "20170420",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0007_powerSource": {
+                            "AttributeID": "0007",
+                            "AttributeName": "powerSource",
+                            "AttributeType": "30",
+                            "DefaultValue": "03",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0008_applicationProfileVersion": {
+                            "AttributeID": "0008",
+                            "AttributeName": "applicationProfileVersion",
+                            "AttributeType": "23",
+                            "DefaultValue": "01020100",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0010_locationDescription": {
+                            "AttributeID": "0010",
+                            "AttributeName": "locationDescription",
+                            "AttributeType": "42",
+                            "DefaultValue": "",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0011_physicalEnvironment": {
+                            "AttributeID": "0011",
+                            "AttributeName": "physicalEnvironment",
+                            "AttributeType": "30",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0012_deviceEnabled": {
+                            "AttributeID": "0012",
+                            "AttributeName": "deviceEnabled",
+                            "AttributeType": "10",
+                            "DefaultValue": "01",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                },
+                "0001_Power Configuration Cluster": {
+                    "ClusterID": "0001",
+                    "ClusterName": "Power Configuration Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0020_batteryVoltage": {
+                            "AttributeID": "0020",
+                            "AttributeName": "batteryVoltage",
+                            "AttributeType": "20",
+                            "DefaultValue": "1E",
+                            "ReportableConfigState": "FFFF,FFFF"
+                        },
+                        "0021_batteryPercentageRemaining": {
+                            "AttributeID": "0021",
+                            "AttributeName": "batteryPercentageRemaining",
+                            "AttributeType": "20",
+                            "DefaultValue": "A6",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0030_batteryManufacturer": {
+                            "AttributeID": "0030",
+                            "AttributeName": "batteryManufacturer",
+                            "AttributeType": "42",
+                            "DefaultValue": "CR123A",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0031_batterySize": {
+                            "AttributeID": "0031",
+                            "AttributeName": "batterySize",
+                            "AttributeType": "30",
+                            "DefaultValue": "02",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0032_batteryAHrRating": {
+                            "AttributeID": "0032",
+                            "AttributeName": "batteryAHrRating",
+                            "AttributeType": "21",
+                            "DefaultValue": "009B",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0033_batteryQuantity": {
+                            "AttributeID": "0033",
+                            "AttributeName": "batteryQuantity",
+                            "AttributeType": "20",
+                            "DefaultValue": "01",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0034_batteryRatedVoltage": {
+                            "AttributeID": "0034",
+                            "AttributeName": "batteryRatedVoltage",
+                            "AttributeType": "20",
+                            "DefaultValue": "1E",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0036_batteryVoltageMinThreshold": {
+                            "AttributeID": "0036",
+                            "AttributeName": "batteryVoltageMinThreshold",
+                            "AttributeType": "20",
+                            "DefaultValue": "19",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                },
+                "0003_Identify Cluster": {
+                    "ClusterID": "0003",
+                    "ClusterName": "Identify Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_identifyTime": {
+                            "AttributeID": "0000",
+                            "AttributeName": "identifyTime",
+                            "AttributeType": "21",
+                            "DefaultValue": "0000",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0001_commissionState": {
+                            "AttributeID": "0001",
+                            "AttributeName": "commissionState",
+                            "AttributeType": "18",
+                            "DefaultValue": "03",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                },
+                "0019_OTA Cluster": {
+                    "ClusterID": "0019",
+                    "ClusterName": "OTA Cluster",
+                    "ClusterType": "client",
+                    "ListOfAttributes": {
+                        "0000_upgradeServerId": {
+                            "AttributeID": "0000",
+                            "AttributeName": "upgradeServerId",
+                            "AttributeType": "F0",
+                            "DefaultValue": "0021ED000009054A",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0001_file Offset": {
+                            "AttributeID": "0001",
+                            "AttributeName": "file Offset",
+                            "AttributeType": "23",
+                            "DefaultValue": "FFFFFFFF",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0002_current File Version": {
+                            "AttributeID": "0002",
+                            "AttributeName": "current File Version",
+                            "AttributeType": "23",
+                            "DefaultValue": "03012603",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0003_current ZigBee Stack Version": {
+                            "AttributeID": "0003",
+                            "AttributeName": "current ZigBee Stack Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "0002",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0004_downloaded File Version": {
+                            "AttributeID": "0004",
+                            "AttributeName": "downloaded File Version",
+                            "AttributeType": "23",
+                            "DefaultValue": "FFFFFFFF",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0005_downloaded ZigBee Stack Version": {
+                            "AttributeID": "0005",
+                            "AttributeName": "downloaded ZigBee Stack Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "FFFF",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0006_image Upgrade Status": {
+                            "AttributeID": "0006",
+                            "AttributeName": "image Upgrade Status",
+                            "AttributeType": "30",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0007_manufacturerId": {
+                            "AttributeID": "0007",
+                            "AttributeName": "manufacturerId",
+                            "AttributeType": "21",
+                            "DefaultValue": "1039",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0008_imageTypeId": {
+                            "AttributeID": "0008",
+                            "AttributeName": "imageTypeId",
+                            "AttributeType": "21",
+                            "DefaultValue": "0021",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0009_minimumBlockRequestDelay": {
+                            "AttributeID": "0009",
+                            "AttributeName": "minimumBlockRequestDelay",
+                            "AttributeType": "21",
+                            "DefaultValue": "0032",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                },
+                "0020_Poll Control Cluster": {
+                    "ClusterID": "0020",
+                    "ClusterName": "Poll Control Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_checkInInterval": {
+                            "AttributeID": "0000",
+                            "AttributeName": "checkInInterval",
+                            "AttributeType": "23",
+                            "DefaultValue": "00000078",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0001_longPollInterval": {
+                            "AttributeID": "0001",
+                            "AttributeName": "longPollInterval",
+                            "AttributeType": "23",
+                            "DefaultValue": "00000014",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0002_shortPollInterval": {
+                            "AttributeID": "0002",
+                            "AttributeName": "shortPollInterval",
+                            "AttributeType": "21",
+                            "DefaultValue": "0004",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0003_fastPollTimeout": {
+                            "AttributeID": "0003",
+                            "AttributeName": "fastPollTimeout",
+                            "AttributeType": "21",
+                            "DefaultValue": "0006",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0004_checkInIntervalMin": {
+                            "AttributeID": "0004",
+                            "AttributeName": "checkInIntervalMin",
+                            "AttributeType": "23",
+                            "DefaultValue": "00000078",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0005_LongPollIntervalMin": {
+                            "AttributeID": "0005",
+                            "AttributeName": "LongPollIntervalMin",
+                            "AttributeType": "23",
+                            "DefaultValue": "00000014",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0006_fastPollTimeoutMax": {
+                            "AttributeID": "0006",
+                            "AttributeName": "fastPollTimeoutMax",
+                            "AttributeType": "21",
+                            "DefaultValue": "0078",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                },
+                "0400_Illuminance Cluster": {
+                    "ClusterID": "0400",
+                    "ClusterName": "Illuminance Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_occupancy": {
+                            "AttributeID": "0000",
+                            "AttributeName": "occupancy",
+                            "AttributeType": "21",
+                            "DefaultValue": "5C15",
+                            "ReportableConfigState": "FFFF,FFFF"
+                        },
+                        "0001_occupancySensorType": {
+                            "AttributeID": "0001",
+                            "AttributeName": "occupancySensorType",
+                            "AttributeType": "21",
+                            "DefaultValue": "FFFF",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0002_PirOccupiedToUnoccupiedDelay": {
+                            "AttributeID": "0002",
+                            "AttributeName": "PirOccupiedToUnoccupiedDelay",
+                            "AttributeType": "21",
+                            "DefaultValue": "FFFF",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0003_PirUnoccupiedToOccupiedDelay": {
+                            "AttributeID": "0003",
+                            "AttributeName": "PirUnoccupiedToOccupiedDelay",
+                            "AttributeType": "21",
+                            "DefaultValue": "FFFF",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0004_PirUnoccupiedToOccupiedThreshold": {
+                            "AttributeID": "0004",
+                            "AttributeName": "PirUnoccupiedToOccupiedThreshold",
+                            "AttributeType": "30",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                },
+                "0402_Temperature Measurement Cluster": {
+                    "ClusterID": "0402",
+                    "ClusterName": "Temperature Measurement Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_measuredValue": {
+                            "AttributeID": "0000",
+                            "AttributeName": "measuredValue",
+                            "AttributeType": "29",
+                            "DefaultValue": "0A66",
+                            "ReportableConfigState": "FFFF,FFFF"
+                        },
+                        "0001_minMeasuredValue": {
+                            "AttributeID": "0001",
+                            "AttributeName": "minMeasuredValue",
+                            "AttributeType": "29",
+                            "DefaultValue": "F63C",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0002_maxMeasuredValue": {
+                            "AttributeID": "0002",
+                            "AttributeName": "maxMeasuredValue",
+                            "AttributeType": "29",
+                            "DefaultValue": "2134",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0003_tolerance": {
+                            "AttributeID": "0003",
+                            "AttributeName": "tolerance",
+                            "AttributeType": "21",
+                            "DefaultValue": "0032",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                },
+                "0406_Occupancy Sensor Cluster": {
+                    "ClusterID": "0406",
+                    "ClusterName": "Occupancy Sensor Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_occupancy": {
+                            "AttributeID": "0000",
+                            "AttributeName": "occupancy",
+                            "AttributeType": "18",
+                            "DefaultValue": "01",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0001_occupancySensorType": {
+                            "AttributeID": "0001",
+                            "AttributeName": "occupancySensorType",
+                            "AttributeType": "30",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0010_PirOccupiedToUnoccupiedDelay": {
+                            "AttributeID": "0010",
+                            "AttributeName": "PirOccupiedToUnoccupiedDelay",
+                            "AttributeType": "21",
+                            "DefaultValue": "001E",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0011_PirUnoccupiedToOccupiedDelay": {
+                            "AttributeID": "0011",
+                            "AttributeName": "PirUnoccupiedToOccupiedDelay",
+                            "AttributeType": "21",
+                            "DefaultValue": "0001",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0012_PirUnoccupiedToOccupiedThreshold": {
+                            "AttributeID": "0012",
+                            "AttributeName": "PirUnoccupiedToOccupiedThreshold",
+                            "AttributeType": "20",
+                            "DefaultValue": "02",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                },
+                "0500_IAS Zone Cluster": {
+                    "ClusterID": "0500",
+                    "ClusterName": "IAS Zone Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_zoneState": {
+                            "AttributeID": "0000",
+                            "AttributeName": "zoneState",
+                            "AttributeType": "30",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0001_zoneType": {
+                            "AttributeID": "0001",
+                            "AttributeName": "zoneType",
+                            "AttributeType": "31",
+                            "DefaultValue": "000D",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0002_zoneStatus": {
+                            "AttributeID": "0002",
+                            "AttributeName": "zoneStatus",
+                            "AttributeType": "19",
+                            "DefaultValue": "0001",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0010_iasCieAddress": {
+                            "AttributeID": "0010",
+                            "AttributeName": "iasCieAddress",
+                            "AttributeType": "F0",
+                            "DefaultValue": "0000000000000000",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0011_zoneId": {
+                            "AttributeID": "0011",
+                            "AttributeName": "zoneId",
+                            "AttributeType": "20",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,309 @@
+{
+    "globalVariables": {
+        "Language": "US Spanish",
+        "apiValidationType": "Platform API",
+        "appium_port": "4723",
+        "appium_udid": "01d6e4b21e894bd7",
+        "atZigbeeNode": "081A",
+        "atZigbeeSPNode": "B672",
+        "atZigbeeTHNode": "B672",
+        "batch_execution": {
+            "result_folder_name": "Tester26_v6_BasicSmokeTest_Heating_26-Jan-2016_12-31-51",
+            "status": "No"
+        },
+        "clientList": {
+            "client1": "Android App",
+            "client2": "iOS App",
+            "client3": "Web App",
+            "client4": "Thermostat"
+        },
+        "currentAppVersion": "V6",
+        "currentEnvironment": "isopInternProd",
+        "istestrunupdate": "false",
+        "listOfEnvironments": {
+            "isopBeta": {
+                "BeekeeperEntitlement": {
+                    "bk_api_key": "x9pfWlKkNi69AuYTzFM812ECM9Xsrr96912rdAMa"
+                },
+                "LeakSimulation": {
+                    "api_key": "Zpv5HSWsR9aRAWMzGUPFkMusLbxdYqT96UUNNOVf"
+                },
+                "androidV5": {
+                    "appActivity": "uk.co.centrica.hive.ui.base.HiveNavDrawerActivity",
+                    "appFileName": "Hive-productPlayStoreISOPBeta-release-1.1.0.79.apk",
+                    "appPackage": "uk.co.centrica.hive.isopbeta",
+                    "deviceName": "Hive Android",
+                    "platformVersion": "5.0"
+                },
+                "androidV6": {
+                    "appActivity": "uk.co.centrica.hive.ui.base.SplashScreenActivity",
+                    "appFileName": "HHive-Beta-release-1.5.03.apk",
+                    "appPackage": "uk.co.centrica.hive.v6.beta.multiproduct",
+                    "deviceName": "Nexus 5",
+                    "platformVersion": "6.0.1"
+                },
+                "common": {
+                    "BeekeeperURL": "https://beekeeper-beta.hivehome.com/1.0",
+                    "appFolderName": "isopBeta",
+                    "platformAPIURL": "https://api.beta.bgchprod.info",
+                    "superToken": ""
+                },
+                "iOSV6": {
+                    "appFileName": "Hive.app",
+                    "automationName": "XCUITest",
+                    "bundleID": "com.hive.automation",
+                    "deviceName": "iPhone 7 Plus",
+                    "platformVersion": "10.2",
+                    "realDeviceLogger": "/usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent/deviceconsole/",
+                    "udid": "A15EBBA9-0982-49EC-8B7F-F5F5419581C3"
+                },
+                "superuser": {
+                    "password": "password1",
+                    "username": "kingston.samselwyn@bgch.co.uk"
+                },
+                "webV5": {
+                    "browserName": "Firefox",
+                    "loginURL": "https://beta-my.hivehome.com/login"
+                },
+                "webV6": {
+                    "browserName": "Firefox",
+                    "loginURL": "https://beta-my.hivehome.com/login"
+                }
+            },
+            "isopBetaUS": {
+                "BeekeeperEntitlement": {
+                    "bk_api_key": "Not Available"
+                },
+                "LeakSimulation": {
+                    "api_key": "Not Available"
+                },
+                "androidV5": {
+                    "appActivity": "uk.co.centrica.hive.ui.base.HiveNavDrawerActivity",
+                    "appFileName": "Hive-productPlayStoreISOPBeta-release-1.1.0.79.apk",
+                    "appPackage": "uk.co.centrica.hive.isopbeta",
+                    "deviceName": "Hive Android",
+                    "platformVersion": "5.0"
+                },
+                "androidV6": {
+                    "appActivity": "uk.co.centrica.hive.ui.base.HiveBottomDrawerActivity",
+                    "appFileName": "Hive-productV6BetaInternalTesters-release-1.2.0.72.apk",
+                    "appPackage": "uk.co.centrica.hive.v6.beta.internaltesters",
+                    "deviceName": "HiveAndroid",
+                    "platformVersion": "5.0"
+                },
+                "common": {
+                    "BeekeeperURL": "https://beekeeper-beta-na.hivehome.com/1.0",
+                    "appFolderName": "isopBetaUS",
+                    "platformAPIURL": "https://api.de-beta.nacho.tech:8443",
+                    "superToken": ""
+                },
+                "iOSV6": {
+                    "appFileName": "Hive.app",
+                    "automationName": "XCUITest",
+                    "bundleID": "com.hive.automation",
+                    "deviceName": "iPhone 7 Plus",
+                    "platformVersion": "10.2",
+                    "realDeviceLogger": "/usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent/deviceconsole/",
+                    "udid": "A15EBBA9-0982-49EC-8B7F-F5F5419581C3"
+                },
+                "superuser": {
+                    "password": "password1",
+                    "username": "kingston.samselwyn@bgch.co.uk"
+                },
+                "webV5": {
+                    "browserName": "Firefox",
+                    "loginURL": "https://beta-my.hivehome.com/login"
+                },
+                "webV6": {
+                    "browserName": "Firefox",
+                    "loginURL": "https://beta-my.hivehome.com/login"
+                }
+            },
+            "isopInternProd": {
+                "BeekeeperEntitlement": {
+                    "bk_api_key": "x9pfWlKkNi69AuYTzFM812ECM9Xsrr96912rdAMa"
+                },
+                "LeakSimulation": {
+                    "api_key": "nKEfXUHnpI9fpgYTEHWPE7Fa5M0vsM409Zwn3TsD"
+                },
+                "androidV5": {
+                    "appActivity": "uk.co.centrica.hive.ui.base.SplashScreenActivity",
+                    "appFileName": "Hive-Internalprod-release-1.8.03.apk",
+                    "appPackage": "uk.co.centrica.hive.v6.internalprod.multiproduct",
+                    "deviceName": "Hive Android",
+                    "platformVersion": "5.0"
+                },
+                "androidV6": {
+                    "appActivity": "uk.co.centrica.hive.ui.base.SplashScreenActivity",
+                    "appFileName": "Hive-Internalprod-release-1.8.03.apk",
+                    "appPackage": "uk.co.centrica.hive.v6.internalprod.multiproduct",
+                    "deviceName": "HiveAndroid",
+                    "platformVersion": "5.0"
+                },
+                "common": {
+                    "BeekeeperURL": "https://beekeeper-intprod.hivehome.com/1.0",
+                    "appFolderName": "isopInternProd",
+                    "platformAPIURL": "https://beekeeper-intprod.hivehome.com/1.0",
+                    "superToken": ""
+                },
+                "iOSV5": {
+                    "appFileName": "Hive_73.ipa",
+                    "bundleID": "uk.co.britishgas.hive",
+                    "deviceName": "iPhone",
+                    "platformVersion": "8.4",
+                    "udid": "8d25ba7d4a8f82f1a32cc35d907ad2a928b6e808"
+                },
+                "iOSV6": {
+                    "appFileName": "Hive.app",
+                    "automationName": "XCUITest",
+                    "bundleID": "com.hive.automation",
+                    "deviceName": "iPhone 7 Plus",
+                    "platformVersion": "10.2",
+                    "realDeviceLogger": "/usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent/deviceconsole/",
+                    "udid": "A15EBBA9-0982-49EC-8B7F-F5F5419581C3"
+                },
+                "superuser": {
+                    "password": "password1",
+                    "username": "kingston.samselwyn@bgch.co.uk"
+                },
+                "webV5": {
+                    "browserName": "Firefox",
+                    "loginURL": "https://intprod-my.hivehome.net/login"
+                },
+                "webV6": {
+                    "browserName": "Firefox",
+                    "loginURL": "http://intprod-my.hivehome.net/dashboard"
+                }
+            },
+            "isopProd": {
+                "BeekeeperEntitlement": {
+                    "bk_api_key": "Not Available"
+                },
+                "LeakSimulation": {
+                    "api_key": "Not Avaliable"
+                },
+                "androidV5": {
+                    "appActivity": "uk.co.centrica.hive.ui.base.SplashScreenActivity",
+                    "appFileName": "Hive-PlayStore-release-1.5.03.apk",
+                    "appPackage": "uk.co.centrica.hive",
+                    "deviceName": "Hive Android",
+                    "platformVersion": "5.0"
+                },
+                "androidV6": {
+                    "appActivity": "uk.co.centrica.hive.ui.base.SplashScreenActivity",
+                    "appFileName": "Hive-PlayStore-release-1.5.03.apk",
+                    "appPackage": "uk.co.centrica.hive",
+                    "deviceName": "HiveAndroid",
+                    "platformVersion": "5.1"
+                },
+                "common": {
+                    "BeekeeperURL": "https://beekeeper.hivehome.com/1.0",
+                    "appFolderName": "isopProd",
+                    "platformAPIURL": "https://api-prod.bgchprod.info",
+                    "superToken": ""
+                },
+                "iOSV5": {
+                    "appFileName": "Hive_73.ipa",
+                    "bundleID": "uk.co.britishgas.hive",
+                    "deviceName": "iPhone",
+                    "platformVersion": "8.4",
+                    "udid": "8d25ba7d4a8f82f1a32cc35d907ad2a928b6e808"
+                },
+                "iOSV6": {
+                    "appFileName": "Hive.app",
+                    "automationName": "XCUITest",
+                    "bundleID": "com.hive.automation",
+                    "deviceName": "iPhone 7 Plus",
+                    "platformVersion": "10.2",
+                    "realDeviceLogger": "/usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent/deviceconsole/",
+                    "udid": "A15EBBA9-0982-49EC-8B7F-F5F5419581C3"
+                },
+                "superuser": {
+                    "password": "password1",
+                    "username": "kingston.samselwyn@bgch.co.uk"
+                },
+                "webV5": {
+                    "browserName": "Firefox",
+                    "loginURL": "https://my.hivehome.com/login"
+                },
+                "webV6": {
+                    "browserName": "Firefox",
+                    "loginURL": "https://my.hivehome.com/dashboard"
+                }
+            },
+            "isopStaging": {
+                "BeekeeperEntitlement": {
+                    "bk_api_key": "x9pfWlKkNi69AuYTzFM812ECM9Xsrr96912rdAMa"
+                },
+                "LeakSimulation": {
+                    "api_key": "DLMEF91MNO9GEAf3m667J1t74b1SDClV6iSgzqX3"
+                },
+                "androidV5": {
+                    "appActivity": "uk.co.centrica.hive.ui.base.SplashScreenActivity",
+                    "appFileName": "Hive-Staging-release-1.7.01.apk",
+                    "appPackage": "uk.co.centrica.hive.v6.staging.multiproduct",
+                    "deviceName": "Hive Test",
+                    "platformVersion": "5.5"
+                },
+                "androidV6": {
+                    "appActivity": "uk.co.centrica.hive.ui.base.SplashScreenActivity",
+                    "appFileName": "Hive-Staging-release-1.7.01.apk",
+                    "appPackage": "uk.co.centrica.hive.v6.staging.multiproduct",
+                    "deviceName": "Hive Test",
+                    "platformVersion": "5.5"
+                },
+                "common": {
+                    "BeekeeperURL": "https://beekeeper-staging.hivehome.com/1.0",
+                    "appFolderName": "isopStaging",
+                    "platformAPIURL": "https://api.staging.zoo.alertme.com",
+                    "superToken": ""
+                },
+                "iOSV5": {
+                    "appFileName": "Hive_73.ipa",
+                    "bundleID": "uk.co.britishgas.hive",
+                    "deviceName": "Test Android",
+                    "platformVersion": "8.3"
+                },
+                "iOSV6": {
+                    "appFileName": "Hive.app",
+                    "automationName": "XCUITest",
+                    "bundleID": "com.hive.automation",
+                    "deviceName": "iPhone 7 Plus",
+                    "platformVersion": "10.2",
+                    "realDeviceLogger": "/usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent/deviceconsole/",
+                    "udid": "A15EBBA9-0982-49EC-8B7F-F5F5419581C3"
+                },
+                "superuser": {
+                    "password": "Snigdha123",
+                    "username": "snigdhaapoddar"
+                },
+                "webV5": {
+                    "browserName": "Firefox",
+                    "loginURL": "https://intprod-my.hivehome.net/login"
+                },
+                "webV6": {
+                    "browserName": "Firefox",
+                    "loginURL": "https://intprod-my.hivehome.net/login"
+                }
+            }
+        },
+        "mainClient": "Android App",
+        "password": "Password-1",
+        "projectName": "Hive",
+        "resultFolderLabel": "BasicSmokeTest",
+        "secondClient": "iOS App",
+        "secondClientValidateFlag": "NO",
+        "suiteName": "Functional test cases",
+        "test_suite": "BasicSmokeTest_Heating",
+        "testrailpassword": "Password-1",
+        "testrailurl": "https://bgch.testrail.net/",
+        "testrailusername": "Saravanakumar.Balakrishnan",
+        "testrunname": "Demo-Regression Test",
+        "userName": "saravana_kumar_nano",
+        "validation": {
+            "checkInterval": "10",
+            "duration": "60",
+            "timeUnits": "seconds"
+        }
+    }
+}

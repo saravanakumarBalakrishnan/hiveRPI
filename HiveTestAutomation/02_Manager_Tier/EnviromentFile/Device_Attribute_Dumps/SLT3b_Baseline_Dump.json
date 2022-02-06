@@ -1,0 +1,272 @@
+{
+    "DeviceModelID": "SLT3b",
+    "DeviceVersion": "01130110",
+    "ListOfEndPoints": {
+        "09": {
+            "EndPoint": "09",
+            "ListOfClusters": {
+                "0000_Basic Cluster": {
+                    "ClusterID": "0000",
+                    "ClusterName": "Basic Cluster",
+                    "ClusterType": "client",
+                    "ListOfAttributes": {}
+                },
+                "0001_Power Configuration Cluster": {
+                    "ClusterID": "0001",
+                    "ClusterName": "Power Configuration Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0020_batteryVoltage": {
+                            "AttributeID": "0020",
+                            "AttributeName": "batteryVoltage",
+                            "AttributeType": "20",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "FFFF,FFFF"
+                        },
+                        "0021_batteryPercentageRemaining": {
+                            "AttributeID": "0021",
+                            "AttributeName": "batteryPercentageRemaining",
+                            "AttributeType": "20",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0035_batteryAlarmMask": {
+                            "AttributeID": "0035",
+                            "AttributeName": "batteryAlarmMask",
+                            "AttributeType": "18",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0036_batteryVoltageMinThreshold": {
+                            "AttributeID": "0036",
+                            "AttributeName": "batteryVoltageMinThreshold",
+                            "AttributeType": "20",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "FFFD_Ember: Cluster Version": {
+                            "AttributeID": "FFFD",
+                            "AttributeName": "Ember: Cluster Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "0001",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                },
+                "0003_Identify Cluster": {
+                    "ClusterID": "0003",
+                    "ClusterName": "Identify Cluster",
+                    "ClusterType": "client",
+                    "ListOfAttributes": {}
+                },
+                "0009_Alarms Cluster": {
+                    "ClusterID": "0009",
+                    "ClusterName": "Alarms Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "FFFD_Ember: Cluster Version": {
+                            "AttributeID": "FFFD",
+                            "AttributeName": "Ember: Cluster Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "0001",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                },
+                "000A_Time Cluster": {
+                    "ClusterID": "000A",
+                    "ClusterName": "Time Cluster",
+                    "ClusterType": "client",
+                    "ListOfAttributes": {}
+                },
+                "0019_OTA Cluster": {
+                    "ClusterID": "0019",
+                    "ClusterName": "OTA Cluster",
+                    "ClusterType": "client",
+                    "ListOfAttributes": {
+                        "0000_upgradeServerId": {
+                            "AttributeID": "0000",
+                            "AttributeName": "upgradeServerId",
+                            "AttributeType": "F0",
+                            "DefaultValue": "0021ED0000010FA3",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0001_file Offset": {
+                            "AttributeID": "0001",
+                            "AttributeName": "file Offset",
+                            "AttributeType": "23",
+                            "DefaultValue": "FFFFFFFF",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0002_current File Version": {
+                            "AttributeID": "0002",
+                            "AttributeName": "current File Version",
+                            "AttributeType": "23",
+                            "DefaultValue": "01130110",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0003_current ZigBee Stack Version": {
+                            "AttributeID": "0003",
+                            "AttributeName": "current ZigBee Stack Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "0002",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0004_downloaded File Version": {
+                            "AttributeID": "0004",
+                            "AttributeName": "downloaded File Version",
+                            "AttributeType": "23",
+                            "DefaultValue": "FFFFFFFF",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0005_downloaded ZigBee Stack Version": {
+                            "AttributeID": "0005",
+                            "AttributeName": "downloaded ZigBee Stack Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "FFFF",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0006_image Upgrade Status": {
+                            "AttributeID": "0006",
+                            "AttributeName": "image Upgrade Status",
+                            "AttributeType": "30",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0007_manufacturerId": {
+                            "AttributeID": "0007",
+                            "AttributeName": "manufacturerId",
+                            "AttributeType": "21",
+                            "DefaultValue": "1039",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0008_imageTypeId": {
+                            "AttributeID": "0008",
+                            "AttributeName": "imageTypeId",
+                            "AttributeType": "21",
+                            "DefaultValue": "0206",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                },
+                "0020_Poll Control Cluster": {
+                    "ClusterID": "0020",
+                    "ClusterName": "Poll Control Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_checkInInterval": {
+                            "AttributeID": "0000",
+                            "AttributeName": "checkInInterval",
+                            "AttributeType": "23",
+                            "DefaultValue": "000001E0",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0001_longPollInterval": {
+                            "AttributeID": "0001",
+                            "AttributeName": "longPollInterval",
+                            "AttributeType": "23",
+                            "DefaultValue": "00000001",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0002_shortPollInterval": {
+                            "AttributeID": "0002",
+                            "AttributeName": "shortPollInterval",
+                            "AttributeType": "21",
+                            "DefaultValue": "0001",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0003_fastPollTimeout": {
+                            "AttributeID": "0003",
+                            "AttributeName": "fastPollTimeout",
+                            "AttributeType": "21",
+                            "DefaultValue": "0028",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "FFFD_Ember: Cluster Version": {
+                            "AttributeID": "FFFD",
+                            "AttributeName": "Ember: Cluster Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "0001",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                },
+                "0201_Thermostat Cluster": {
+                    "ClusterID": "0201",
+                    "ClusterName": "Thermostat Cluster",
+                    "ClusterType": "client",
+                    "ListOfAttributes": {}
+                },
+                "0204_Thermostat UI Cluster": {
+                    "ClusterID": "0204",
+                    "ClusterName": "Thermostat UI Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_temperatureDisplayMode": {
+                            "AttributeID": "0000",
+                            "AttributeName": "temperatureDisplayMode",
+                            "AttributeType": "30",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0001_keypadLockout": {
+                            "AttributeID": "0001",
+                            "AttributeName": "keypadLockout",
+                            "AttributeType": "30",
+                            "DefaultValue": "00",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "FFFD_Ember: Cluster Version": {
+                            "AttributeID": "FFFD",
+                            "AttributeName": "Ember: Cluster Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "0001",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                },
+                "0402_Temperature Measurement Cluster": {
+                    "ClusterID": "0402",
+                    "ClusterName": "Temperature Measurement Cluster",
+                    "ClusterType": "server",
+                    "ListOfAttributes": {
+                        "0000_measuredValue": {
+                            "AttributeID": "0000",
+                            "AttributeName": "measuredValue",
+                            "AttributeType": "29",
+                            "DefaultValue": "0B14",
+                            "ReportableConfigState": "FFFF,FFFF"
+                        },
+                        "0001_minMeasuredValue": {
+                            "AttributeID": "0001",
+                            "AttributeName": "minMeasuredValue",
+                            "AttributeType": "29",
+                            "DefaultValue": "0000",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "0002_maxMeasuredValue": {
+                            "AttributeID": "0002",
+                            "AttributeName": "maxMeasuredValue",
+                            "AttributeType": "29",
+                            "DefaultValue": "0000",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        },
+                        "FFFD_Ember: Cluster Version": {
+                            "AttributeID": "FFFD",
+                            "AttributeName": "Ember: Cluster Version",
+                            "AttributeType": "21",
+                            "DefaultValue": "0001",
+                            "ReportableConfigState": "ZCL_UNREPORTABLE_ATTRIBUTE"
+                        }
+                    }
+                },
+                "FD00_BG Cluster": {
+                    "ClusterID": "FD00",
+                    "ClusterName": "BG Cluster",
+                    "ClusterType": "client",
+                    "ListOfAttributes": {}
+                }
+            }
+        }
+    }
+}

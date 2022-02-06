@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <hta:application
+        applicationname="Test"
+        id="TestApp"
+        version="1.0" />
+    <meta charset="UTF-8">
+    <!-- BOOTSTRAP STYLES-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- CUSTOM STYLES-->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <title>Hive Automation</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <style type="text/css">
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close {
+            color: red;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+    </style>
+    <script language="vbscript">
+        sub onloadfn()
+       
+        Set WshShell = CreateObject("WScript.Shell")
+        'MsgBox("hi")
+        onloadModal()
+        'WshShell.Run "c:\HiveTestAutomation/init_WINDOWS.bat"
+        Dim File
+        Dim strPath
+        Dim objShell, objCmdExec
+            Set objShell = CreateObject("WScript.Shell")
+            strCurDir    = objShell.CurrentDirectory
+        strPath = strCurDir & "\01_BDD_Tier\features\12_Device_Regression\"
+        Set objFSO = CreateObject("Scripting.FileSystemObject")
+
+        objStartFolder =strPath
+
+        Set objFolder = objFSO.GetFolder(objStartFolder)
+
+
+        Set colFiles = objFolder.Files
+        intSize = 0
+        ReDim Preserve arrTestArray(intSize)
+        For Each objFile in colFiles
+            'WshShell.Popup( objFile.Name)
+            arrTestArray(intSize) = objFile.Name
+            intSize = intSize + 1
+            ReDim Preserve arrTestArray(intSize)
+            addjs(objFile.Name)
+        Next
+       
+        strCurDir    = objShell.CurrentDirectory
+        strPath = strCurDir & "\01_BDD_Tier\features\steps\Function_Libraries\FF_zigbeeToolsConfig.py"
+        Set fso = CreateObject("Scripting.FileSystemObject")
+        Set f = fso.OpenTextFile(strPath)
+        element = ""
+        Do Until f.AtEndOfStream
+        tempValue = cstr(f.ReadLine)
+        if Trim(tempValue) <> "" or tempValue <> null Then
+                
+            if InStr(1,tempValue,"FIRMWARE_ROOT_FILE_PATH",1) > 0 Then
+                setEnvPath(tempValue)
+            End If 
+        End If           
+        Loop
+        f.Close
+        
+        end sub
+
+        sub readFiles(strName)
+        Dim objShell, objCmdExec
+            Set objShell = CreateObject("WScript.Shell")
+            strCurDir    = objShell.CurrentDirectory
+        strPath = strCurDir & "\01_BDD_Tier\features\12_Device_Regression\" & strName
+
+        Set fso = CreateObject("Scripting.FileSystemObject")
+        Set f = fso.OpenTextFile(strPath)
+        Dim element
+        Dim flagEOT
+        Dim flag
+        flag = false
+        Do Until f.AtEndOfStream
+            element = f.ReadLine
+            if Instr(1,element,"@",1) > 0 then
+                a=Split(element,"@")
+                b=ubound(a)
+                element = ""
+                for x = 0 to b
+                    if Trim(a(x)) <> "" Then
+                        element = element & "<input type='Button'  class='btn-primary' onclick='btnclickfunc(this)' value = '" & a(x) & "'/>"
+                    End If
+                Next
+            End if
+
+            if Instr(1,Trim(element),"|",1) > 0 then
+                flagEOT = true
+                c=Split(element,"|")
+                d=ubound(c)
+                if flag = false then
+                   element = "<table class='table'>"
+                else                                        
+                    element = "<tr class='info'>"
+                End if
+                                        
+                for x = 0 to d
+                    if Trim(c(x)) <> "" then
+                        if counter = 0 then
+                                                
+                            element = element & "<td><b>" & Trim(c(x)) & "</b></td>"
+                                                
+                        else 
+                            element = element &  "<td><input type=""text"" value=" & Trim(c(x)) & " disabled></input></td>"
+                        End if
+                                                
+                        flag = true
+                                                
+                    End if
+                Next
+                counter = counter + 1
+                element = element & "</tr>"
+                                        
+                tableElement = tableElement & element
+            else
+                if flagEOT = true then
+                                        
+                    tableElement = tableElement & "</table>"
+                    appendScenario(tableElement)
+                    tableElement = ""
+                    flagEOT = false
+                    flag = false
+                    counter = 0
+                End if
+                appendScenario(element)
+                                    
+            End If
+        Loop
+        
+        f.Close
+
+        
+            
+        
+        end sub
+
+        sub execution(strTag)
+        Dim objShell, objCmdExec
+            Set objShell = CreateObject("WScript.Shell")
+            strCurDir    = objShell.CurrentDirectory
+        'MsgBox(strCurDir)
+        Const ForWriting = 2
+        Set objFSO = CreateObject("Scripting.FileSystemObject")
+        Set objFile = objFSO.OpenTextFile(strCurDir&"/Launch.bat", ForWriting)
+        objFile.WriteLine "#!/bin/sh cd -- ""$(dirname ""$0"")"
+        objFile.WriteLine "cd 01_BDD_Tier"
+        objFile.WriteLine "cd features"
+        objFile.WriteLine "behave --tags="&strTag
+        objFile.WriteLine "pause"
+        objFile.Close
+
+        objShell.Run "Launch.bat"
+        'openResult()
+       
+           appendConsole("<input type='Button' onclick='openResult()' value ='Result'/>")
+        End sub
+
+        sub openResultsFolder()
+            Set objShell = CreateObject("WScript.Shell")
+            strCurDir    = objShell.CurrentDirectory
+	    
+            strResultsDir = strCurDir & "\03_Results_Tier"
+            objshell.Run "explorer.exe /e," & strResultsDir
+        End Sub
+
+        sub openFirmwareFolder()
+            Set objShell = CreateObject("WScript.Shell")
+            strCurDir    = objShell.CurrentDirectory
+            strResultsDir = strCurDir & "\02_Manager_Tier\firmware-release-notes"
+            objshell.Run "explorer.exe /e," & strResultsDir
+        End Sub
+
+        sub openResult()
+         Set objShell = CreateObject("WScript.Shell")
+         strCurDir    = objShell.CurrentDirectory
+        
+        strPath = strCurDir & "\02_Manager_Tier\EnviromentFile\scripts\Temp.txt"
+
+        Set fso = CreateObject("Scripting.FileSystemObject")
+        Set f = fso.OpenTextFile(strPath)
+        Dim element
+        element = ""
+        Do Until f.AtEndOfStream
+            element = element & f.ReadLine
+        Loop
+        'MsgBox(element)
+        objShell.Run """" & element & """"
+        End sub
+
+        Sub getNodes()
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "getNodes.bat"
+        End sub
+
+        Sub verifyTGStick()
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "verifyTGStick.bat"
+        'Wscript.Sleep 300
+        Set objShell = CreateObject("WScript.Shell")
+        strCurDir    = objShell.CurrentDirectory        
+        strPath = strCurDir & "/TGStickstatus.txt"
+        Set fso = CreateObject("Scripting.FileSystemObject")
+        Set f = fso.OpenTextFile(strPath)
+        Dim element
+        element = ""
+        Do Until f.AtEndOfStream
+            element = element & f.ReadLine
+        Loop
+        'MsgBox(element)
+        End sub
+
+        sub readToTextArea(strName)
+        strName = Replace(strName,"Scenarios from ","")
+        'MsgBox(strName)
+        Dim objShell
+            Set objShell = CreateObject("WScript.Shell")
+            strCurDir    = objShell.CurrentDirectory
+        strPath = strCurDir & "\01_BDD_Tier\features\12_Device_Regression\" & strName
+
+        Set fso = CreateObject("Scripting.FileSystemObject")
+        Set f = fso.OpenTextFile(strPath)
+        Dim element
+        Dim flagEOT
+        Dim flag
+        flag = false
+        Do Until f.AtEndOfStream
+            element = f.ReadLine
+        appendeditScenario(element)
+        Loop
+        f.Close
+        End Sub
+
+        sub SaveText(strName)
+        strName = Replace(strName,"Scenarios from ","")
+        Dim objShell
+        Set objShell = CreateObject("WScript.Shell")
+        strCurDir    = objShell.CurrentDirectory
+        strPath = strCurDir & "\01_BDD_Tier\features\12_Device_Regression\" & strName
+        Set fso = CreateObject("Scripting.FileSystemObject")
+        Set f = fso.OpenTextFile(strPath,2,vbTrue)
+        Dim txt
+        txt = getEdit()
+        MsgBox(txt)
+        f.Write ""&txt
+        f.Close
+        readAgain(strName)
+        End sub
+       
+        Sub installDependencies()
+        Set WshShell = CreateObject("WScript.Shell")
+        WshShell.Run "Installation.bat"
+        End sub
+
+        Sub ReadDeviceJson()
+        Set objShell = CreateObject("WScript.Shell")
+        strCurDir    = objShell.CurrentDirectory
+        strPath = strCurDir & "\02_Manager_Tier\EnviromentFile\zigbeeDevices.json"
+        Set fso = CreateObject("Scripting.FileSystemObject")
+        Set f = fso.OpenTextFile(strPath)
+        Dim element
+        Do Until f.AtEndOfStream
+            element = element & f.ReadLine
+            'MsgBox(element)
+        Loop
+        f.Close
+        drawChart(element)
+        End Sub
+
+        sub changePath()
+            Dim element
+            Dim strCurDir
+            Dim strPath
+            Dim objShell
+            Dim fso
+            Dim value
+            Set objShell = CreateObject("WScript.Shell")
+            strCurDir    = objShell.CurrentDirectory
+            strPath = strCurDir & "\01_BDD_Tier\features\steps\Function_Libraries\FF_zigbeeToolsConfig.py"
+            Set fso = CreateObject("Scripting.FileSystemObject")
+            Set f = fso.OpenTextFile(strPath)
+            element = ""
+            Do Until f.AtEndOfStream
+            tempValue = cstr(f.ReadLine)
+            if Trim(tempValue) <> "" or tempValue <> null Then
+                
+                if InStr(1,tempValue,"FIRMWARE_ROOT_FILE_PATH",1) > 0 Then
+                    value =  getEnvPath()
+                    element = element  & "FIRMWARE_ROOT_FILE_PATH = """ & value & """" & vbCrLf
+                else
+                   
+                    element = element  & ""&tempValue & vbCrLf
+                End If 
+            End If           
+            Loop
+            f.Close
+            'MsgBox element
+            Dim g
+            Set g = fso.OpenTextFile(strPath,2,vbTrue)
+            g.Write ""&element
+            g.Close
+        End Sub
+    </script>
+
+    <script language="JavaScript">
+
+
+        function setEnvPath(strValue) {
+            document.getElementById('firmwarePath').value = String(strValue).replace("FIRMWARE_ROOT_FILE_PATH = ", "").replace('"', "").replace('\"', "").replace('\\', "/").replace('C:/', 'C:\\');
+        }
+
+        function getEnvPath() {
+            return document.getElementById('firmwarePath').value;
+        }
+
+        function getEdit() {
+            return document.getElementById('TextArea1').value;
+        }
+
+        function saveToFile() {
+            SaveText(document.getElementById('headerFile').innerText)
+        }
+
+        function appendeditScenario(strContent) {
+            document.getElementById('TextArea1').value += strContent + "\n";
+        }
+        function addjs(item) {
+            $('ul').append('<li  class="text-center"><a  href="#" onclick="clickfunc(this)">' + item + '</a></li>')
+            document.getElementById('TextArea1').style.display = "none";
+            document.getElementById('btnSave').style.display = "none"
+            document.getElementById('btnEdit').style.display = "block"
+            document.getElementById('headerFile').style.display = "none"
+        }
+
+
+        function appendScenario(strContent) {
+            $('<p></p>').html(strContent).appendTo(document.getElementById('output'))
+        }
+        function appendConsole(strContent) {
+            document.getElementById('console').innerHTML = ""
+            $('<p></p>').html(strContent).appendTo(document.getElementById('console'))
+        }
+
+        function clickfunc(obj) {
+            var t = $(obj).text();
+            document.getElementById('TextArea1').style.display = "none";
+            document.getElementById('headerFile').style.display = "none"
+            document.getElementById('btnSave').style.display = "none"
+            document.getElementById('btnEdit').style.display = "block"
+            document.getElementById('output').innerHTML = ""
+            appendScenario("<h2 id='heading'>Scenarios from " + t + "</h2>")
+            readFiles(t)
+        }
+
+        function readAgain(strName) {
+            var t = strName;
+            document.getElementById('TextArea1').style.display = "none";
+            document.getElementById('headerFile').style.display = "none"
+            document.getElementById('btnSave').style.display = "none"
+            document.getElementById('btnEdit').style.display = "block"
+            document.getElementById('output').innerHTML = ""
+            appendScenario("<h2 id='heading'>Scenarios from " + t + "</h2>")
+            readFiles(t)
+        }
+
+        function btnclickfunc(obj) {
+            var t = $(obj).val();
+            //alert(t)
+            execution(t)
+
+        }
+
+        function onloadModal() {
+            // Get the modal
+            var modal = document.getElementById('myModal');
+
+            // Get the button that opens the modal
+            var btn = document.getElementById('myBtn');
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementById('close');
+
+            // When the user clicks on the button, open the modal 
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+
+        function readHTML() {
+            document.getElementById('TextArea1').value = ""
+            document.getElementById('TextArea1').style.display = "block";
+            readToTextArea(document.getElementById('heading').innerText)
+            document.getElementById('headerFile').innerHTML = document.getElementById('heading').innerText
+            document.getElementById('output').innerHTML = ""
+            document.getElementById('btnSave').style.display = "block"
+            document.getElementById('headerFile').style.display = "block"
+            document.getElementById('btnEdit').style.display = "none"
+        }
+    </script>
+
+</head>
+
+<body onload="onloadfn()">
+
+
+    <div>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div>
+                <div class="navbar-header">
+                    <table>
+                        <tr>
+                            <td style="height: 95px; width: 162px">
+                                <img src="assets/img/logo.gif" style="height: 95px; width: 162px" /></td>
+                            <td style="align-items: center; grid-row-align: center; align-self: center; width: 100%">
+                                <h2 style="text-align: center">HIVE TEST AUTOMATION</h2>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-right navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>Control</h1>
+                        <table>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <table style="width: 100%; vertical-align: top">
+                        <tr style="background-color: black">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 15%; vertical-align: top">
+
+                                <nav class="navbar-default" role="navigation">
+                                    <div class="sidebar-collapse">
+                                        <ol class="nav" id="main-menu1">
+                                            <li class="text-center"><a href="#" onclick="verifyTGStick()">Verify TG Stick</a></li>
+                                            <li class="text-center"><a href="#" onclick="getNodes()">Refresh Devices connected</a></li>
+                                            <!--<li class="text-center"><a href="#" >Verify framework configuration</a></li>-->
+                                            <li class="text-center"><a href="#" id="myBtn">Run Tests</a></li>
+                                            <li class="text-center"><a href="#" onclick="installDependencies()">Install Dependencies</a></li>
+                                        </ol>
+                                        <!--<input type="button" id="Btn" value="Configure" />-->
+                                    </div>
+
+                                </nav>
+                            </td>
+                            <td style="width: 55%; vertical-align: top">
+                                <div class="col-md-6">
+                                    <h2>DASHBOARD</h2>
+                                    <hr />
+                                    <div id='output1'>
+                                        <div id="Devices" class="col-md-6">
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top">
+                                <div class="col-md-6" style="vertical-align: top">
+                                    <h6>
+                                        <button id="btnResultsFolder" value="Open Results Folder" onclick="openResultsFolder()" class="btn-info">Open Results Folder</button>&nbsp;
+                                        <button id="btnFirmwareFolder" value="Open Firmware Folder" onclick="openFirmwareFolder()" class="btn-primary">Open Firmware Folder</button></h6>
+                                    <div>
+                                        <!-- Trigger/Open The Modal -->
+
+                                        <div>
+                                            <input id="firmwarePath" />
+                                            <button id="changePath" onclick="changePath()" class="btn-success">save path</button>
+                                        </div>
+                                        <!-- The Modal -->
+                                        <div id="myModal" class="modal">
+
+                                            <!-- Modal content -->
+                                            <div class="modal-content">
+                                                <span class="close" id="close">&times; close</span>
+                                                <div class="col-md-6" style="vertical-align: top">
+                                                    <div class="navbar navbar-inverse navbar-fixed-top">
+                                                        <div>
+                                                            <div class="navbar-header">
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- /. NAV TOP  -->
+                                                    <nav class="navbar-default navbar-right navbar-side" role="navigation">
+                                                        <div class="sidebar-collapse">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <h2 style="color: #FFFFFF">Test Manager </h2>
+
+                                                                    <table>
+                                                                        <tr>
+                                                                            <td></td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </nav>
+                                                    <table style="width: 100%; vertical-align: top">
+                                                        <tr>
+                                                            <td style="width: 15%; vertical-align: top">
+                                                                <nav class="navbar-default" role="navigation">
+                                                                    <div class="sidebar-collapse">
+                                                                        <ul class="nav" id="main-menu">
+                                                                        </ul>
+
+                                                                    </div>
+
+                                                                </nav>
+                                                            </td>
+                                                            <td style="width: 55%; vertical-align: top">
+                                                                <div class="col-md-6">
+
+                                                                    <div id='output'></div>
+                                                                </div>
+                                                            </td>
+                                                            <td style="vertical-align: top">
+                                                                <div class="col-md-6" style="vertical-align: top">
+                                                                    <input type="button" id="btnSave" value="Save" onclick="saveToFile()" class="btn-success" /><input type="button" id="btnEdit" value="Edit" onclick="    readHTML()" class="btn-warning" /><br />
+                                                                    <p id="headerFile"></p>
+                                                                    <textarea id="TextArea1" cols="80%" name="S1" rows="100%"></textarea>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- /. NAV SIDE  -->
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" id="console">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="background-color: black">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+
+                </div>
+                <!-- /. ROW  -->
+
+
+                <!-- /. ROW  -->
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- Modal content -->
+
+
+
+</body>
+
+</html>

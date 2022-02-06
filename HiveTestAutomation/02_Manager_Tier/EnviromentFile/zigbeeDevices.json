@@ -1,0 +1,23 @@
+{
+    "TGStick": {
+        "type": "COO",
+        "childNodes": [
+            "1159"
+        ],
+        "endPoints": [],
+        "nodeID": "0000",
+        "name": "TGStick",
+        "macID": "0021ED00000905F6"
+    },
+    "RB 245_1": {
+        "type": "FFD",
+        "childNodes": [],
+        "endPoints": [
+            "01",
+            "F2"
+        ],
+        "nodeID": "1159",
+        "name": "RB 245",
+        "macID": "9C6937000070F41F"
+    }
+}
